@@ -36,8 +36,7 @@ abstract class GsonClassVisitorFactory : AsmClassVisitorFactory<GsonIConfig> {
     private class ThreadClassVisitor(
         val config: GsonIConfig, val classContext: ClassContext, val nextClassVisitor:
         ClassVisitor
-    ) : ClassNode
-        (Opcodes.ASM5) {
+    ) : ClassNode(Opcodes.ASM5) {
         override fun visitEnd() {
             super.visitEnd()
             methods.firstOrNull {

@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "KTSTranform"
 include(":app")
 include(":buildModule")
+include(":gradleTest")
