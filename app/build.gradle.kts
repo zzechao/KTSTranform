@@ -45,12 +45,13 @@ dependencies {
      afterEvaluate 会报错 Cannot run Project.afterEvaluate(Action)
      when the project is already evaluated.
      只能获取当前afterEvaluate或者其子布局的beforeEvaluate和afterEvaluate
+    3、setting中配置才会生效
  */
 
-val project = findProject(":gradleTest")
-project?.beforeEvaluate {
-    println("gradleTest beforeEvaluate")
-}
-project?.afterEvaluate {
-    println("gradleTest afterEvaluate")
-}
+//val project = findProject(":gradleTest")
+//project?.beforeEvaluate {
+//    println("gradleTest beforeEvaluate")
+//}
+//project?.afterEvaluate {
+//    println("gradleTest afterEvaluate")
+//}
