@@ -1,4 +1,4 @@
-package com.zhouz.buildsrc
+package com.huanju.xunhuan.gson
 
 import com.android.build.api.instrumentation.FramesComputationMode
 import com.android.build.api.instrumentation.InstrumentationScope

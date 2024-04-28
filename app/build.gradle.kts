@@ -38,6 +38,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(project(":gradleTest"))
+    implementation(project(":buildModule"))
 }
 
 /** 1、project 生命周期, 如果是当前project只能afterEvaluate
