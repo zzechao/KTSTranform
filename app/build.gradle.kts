@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+apply(plugin = "com.zhouz.test.TestPlugin")
+
 android {
     namespace = "com.zhouz.ktstranform"
     compileSdk = 34
@@ -20,7 +22,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -39,14 +44,15 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(project(":gradleTest"))
     implementation(project(":buildModule"))
+    //implementation(project(":buildSrc"))
 }
 
 /** 1、project 生命周期, 如果是当前project只能afterEvaluate
-    2、子布局project 无法获取 父布局的
-     afterEvaluate 会报错 Cannot run Project.afterEvaluate(Action)
-     when the project is already evaluated.
-     只能获取当前afterEvaluate或者其子布局的beforeEvaluate和afterEvaluate
-    3、setting中配置才会生效
+2、子布局project 无法获取 父布局的
+afterEvaluate 会报错 Cannot run Project.afterEvaluate(Action)
+when the project is already evaluated.
+只能获取当前afterEvaluate或者其子布局的beforeEvaluate和afterEvaluate
+3、setting中配置才会生效
  */
 
 //val project = findProject(":gradleTest")
