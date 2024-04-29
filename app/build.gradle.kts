@@ -1,9 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("test.TestPlugin")
 }
-
-apply(plugin = "com.zhouz.test.TestPlugin")
 
 android {
     namespace = "com.zhouz.ktstranform"
@@ -43,8 +42,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(project(":gradleTest"))
-    implementation(project(":buildModule"))
-    //implementation(project(":buildSrc"))
 }
 
 /** 1、project 生命周期, 如果是当前project只能afterEvaluate

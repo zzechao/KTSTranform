@@ -15,7 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "KTSTranform"
 include(":app")
-include(":buildModule")
 include(":gradleTest")
 
 gradle.beforeProject {
@@ -59,3 +58,4 @@ gradle.addListener(object : TaskExecutionGraphListener {
         }
     }
 })
+include(":myPlugin")
