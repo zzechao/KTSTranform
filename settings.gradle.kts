@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven("$rootDir/maven-repo/snapshot")
     }
 }
 dependencyResolutionManagement {
