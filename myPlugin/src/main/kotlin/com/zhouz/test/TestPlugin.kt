@@ -8,9 +8,9 @@ class TestPlugin : Plugin<Project> {
         println("test plugin")
         target.task("getBuildDir") {
             println("get build dir at configure phase")
-            this.doLast {
-                println("build dir:${target.buildDir}")
-            }
+//            this.doLast {
+//                println("build dir:${target.buildDir}")
+//            }
         }
     }
 }

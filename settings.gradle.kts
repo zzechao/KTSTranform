@@ -60,3 +60,4 @@ gradle.addListener(object : TaskExecutionGraphListener {
     }
 })
 include(":myPlugin")
+include(":myExtensionTest")
