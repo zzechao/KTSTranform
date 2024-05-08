@@ -5,6 +5,7 @@ plugins {
     id("maven-publish")
 }
 
+
 buildscript {
     repositories {
         google()
@@ -30,19 +31,21 @@ dependencies {
 gradlePlugin {
     plugins {
         register("TestPlugin") {
-            id = "com.zhouz.test.myTestPlugin"
+            id = "com.zhouz.plugin.myPlugin"
             implementationClass = "com.zhouz.test.TestPlugin"
         }
     }
 }
 
 group = "com.zhouz.plugin"
-version = "1.0.0"
+version = "1.0.0-SNAPSHOT"
 
 publishing {
-    publications.create<MavenPublication>("myPlugin") {
-        groupId = "com.zhouz.plugin"
-        version = "1.0.0"
+    publications {
+        create<MavenPublication>("myPlugin") {
+            groupId = "com.zhouz.plugin"
+            version = "1.0.0-SNAPSHOT"
+        }
     }
     repositories {
         maven(uri("../maven-repo/snapshot"))

@@ -61,3 +61,14 @@ gradle.addListener(object : TaskExecutionGraphListener {
 })
 include(":myPlugin")
 include(":myExtensionTest")
+
+
+var time: Long = 0
+gradle.taskGraph.beforeTask {
+    time = System.currentTimeMillis()
+}
+
+gradle.taskGraph.afterTask {
+    val durTime = System.currentTimeMillis() - time
+    println("任务:$name 执行耗时:${durTime}ms")
+}

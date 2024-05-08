@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    //id("com.zhouz.test.myTestPlugin") version "1.0.0"
+    id("com.zhouz.plugin.myPlugin") version "1.0.0-SNAPSHOT"
 }
 
 android {
