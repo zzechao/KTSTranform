@@ -1,5 +1,3 @@
-import org.gradle.api.internal.project.ProjectStateInternal
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -47,9 +45,7 @@ task("name") {
 }
 
 // 自定义任务创建
-@CacheableTask
-open class Test : DefaultTask() {
-
+open class TestTask : DefaultTask() {
     @TaskAction
     fun action1() {
         println("action1")
@@ -61,12 +57,16 @@ open class Test : DefaultTask() {
     }
 }
 
-val task = tasks.create("DefaultTask", Test::class)
-task.doFirst {
-    println("doFirst")
-}.doLast {
-    println("doLast")
+tasks.register<TestTask>("taskTest") {
+    group = "new"
+    doFirst {
+        println("doFirst")
+    }
+    doLast {
+        println("doLast")
+    }
 }
+
 
 // 任务依赖
 task("lib1") {
