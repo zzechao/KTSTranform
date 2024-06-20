@@ -17,6 +17,7 @@ dependencyResolutionManagement {
 rootProject.name = "KTSTranform"
 include(":app")
 include(":gradleTest")
+include(":ARouterPlugin")
 
 gradle.beforeProject {
     println("${this.name} beforeProject")
@@ -72,3 +73,4 @@ gradle.taskGraph.afterTask {
     val durTime = System.currentTimeMillis() - time
     println("任务:$name 执行耗时:${durTime}ms")
 }
+include(":asmTest")
