@@ -4,6 +4,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         maven("$rootDir/maven-repo/snapshot")
+        maven("$rootDir/maven-repo")
     }
 }
 dependencyResolutionManagement {
@@ -17,7 +18,7 @@ dependencyResolutionManagement {
 rootProject.name = "KTSTranform"
 include(":app")
 include(":gradleTest")
-include(":ARouterPlugin")
+include (":ARouterAGP8Plugin")
 
 gradle.beforeProject {
     println("${this.name} beforeProject")

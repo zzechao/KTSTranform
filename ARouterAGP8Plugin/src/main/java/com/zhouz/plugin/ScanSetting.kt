@@ -1,6 +1,4 @@
-package com.zhouz.arouterplugin
-
-import java.io.File
+package com.zhouz.plugin
 
 
 /**
@@ -51,15 +49,10 @@ class ScanSetting(interfaceName: String) {
     var interfaceName: String = ""
 
     /**
-     * jar file which contains class: {@link #GENERATE_TO_CLASS_NAME}
-     */
-    var fileContainsInitClass: File? = null
-
-    /**
      * scan result for {@link #interfaceName}
      * class names in this list
      */
-    val classList = mutableListOf<String>()
+    val classList = mutableSetOf<String>()
 
     init {
         this.interfaceName = INTERFACE_PACKAGE_NAME + interfaceName

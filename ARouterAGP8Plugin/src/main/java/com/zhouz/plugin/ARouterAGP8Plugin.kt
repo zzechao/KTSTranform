@@ -1,4 +1,4 @@
-package com.zhouz.arouterplugin
+package com.zhouz.plugin
 
 import com.android.build.api.artifact.ScopedArtifact
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
@@ -16,18 +16,19 @@ import org.gradle.kotlin.dsl.register
  */
 class ARouterAGP8Plugin : Plugin<Project> {
     override fun apply(project: Project) {
+        Logger.make(project)
         project.plugins.withType(AppPlugin::class.java) {
             val androidComponents =
                 project.extensions.getByType(ApplicationAndroidComponentsExtension::class.java)
             androidComponents.onVariants { variant ->
-                val task = project.tasks.register<ARouterCollectTask>("${variant.name}RouterCollectTask")
-                variant.artifacts.forScope(ScopedArtifacts.Scope.PROJECT)
+                val task = project.tasks.register<ARouterCollectTransferTask>("${variant.name}RouterCollectTask")
+                variant.artifacts.forScope(ScopedArtifacts.Scope.ALL)
                     .use(task)
                     .toTransform(
                         ScopedArtifact.CLASSES,
-                        ARouterCollectTask::allJars,
-                        ARouterCollectTask::allDirectories,
-                        ARouterCollectTask::output
+                        ARouterCollectTransferTask::allJars,
+                        ARouterCollectTransferTask::allDirectories,
+                        ARouterCollectTransferTask::output
                     )
             }
         }

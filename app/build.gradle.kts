@@ -1,8 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    //id("com.zhouz.plugin.myPlugin") version "1.0.0-SNAPSHOT"
+    id("com.zhouz.plugin.myPlugin") version "1.0.0-SNAPSHOT"
 }
+
+if (gradle.startParameter.taskRequests.toString().contains("Release")) {
+    apply(plugin = "com.zhouz.plugin.ARouterAGP8Plugin")
+}
+
 
 android {
     namespace = "com.zhouz.ktstranform"
