@@ -13,7 +13,7 @@ class TestClass {
 
     val constant_field = 10
 
-    val non_constant = null
+    val non_constant: Int? = null
 
     @Throws(IOException::class, FileNotFoundException::class)
     fun test() {
