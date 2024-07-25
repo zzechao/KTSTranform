@@ -75,3 +75,4 @@ gradle.taskGraph.afterTask {
     println("任务:$name 执行耗时:${durTime}ms")
 }
 include(":asmTest")
+include(":ProguardR8AGP8Plugin")
